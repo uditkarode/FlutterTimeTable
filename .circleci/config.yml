@@ -16,12 +16,12 @@ jobs:
                           - run:
                                   command: |
                                           cd ~
-                                          git config user.email "builder@circle.ci"
-                                          git config user.name "BobTheBuilder"
                                           git clone https://github.com/uditkarode/FlutterTimeTable -b builds
                                           cd FlutterTimeTable
                                           rm *
                                           cp ~/project/build/app/outputs/apk/release/app-arm*.apk .
+                                          git config user.email "builder@circle.ci"
+                                          git config user.name "BobTheBuilder"
                                           git add .
                                           git commit -m "builds: update packages"
                                           git push -u origin builds
