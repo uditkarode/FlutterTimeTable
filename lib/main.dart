@@ -22,8 +22,7 @@ void main() {
   collegeEnd = DateTime(
       collegeStart.year, collegeStart.month, collegeStart.day, 16, 40, 0, 0, 0);
 
-  switch ("Tuesday") {
-    //DateFormat('EEEE').format(DateTime.now())) {
+  switch (DateFormat('EEEE').format(DateTime.now())){
     case "Monday":
       timeTable.add(Period("Chemistry", 50));
       timeTable.add(Period("BCEM", 50));
@@ -203,12 +202,13 @@ class RemainingPeriods extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Text(timeTable[actualCount].name,
-                style: TextStyle(fontSize: 25, color: Color(0xffDCEDC8))),
+                style: TextStyle(fontSize: SizeConfig.safeBlockHorizontal * 6.5, color: Color(0xffDCEDC8))),
             RichText(
               textAlign: TextAlign.end,
               text: new TextSpan(
                 style: new TextStyle(
-                  fontSize: 25,
+                  fontFamily: 'ProductSans',
+                  fontSize: SizeConfig.safeBlockHorizontal * 6.5,
                   color: Color(0xffFFF9C4),
                 ),
                 children: <TextSpan>[
