@@ -14,7 +14,7 @@ DateTime relativeEnding;
 bool displayTimer = false;
 
 _CurrentState currentPeriodState = _CurrentState();
-CurrentPeriod indicator = CurrentPeriod();
+CurrentPeriod indicator;
 
 void main() {
   collegeStart = DateTime(
@@ -83,13 +83,15 @@ void main() {
   }
 
   setupExactTimes();
-  runApp(MaterialApp(home: Home(), theme: ThemeData(fontFamily: "ProductSans")));
+  runApp(MaterialApp(home: Home(), theme: ThemeData(fontFamily: 'ProductSans')));
 }
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
+    indicator = CurrentPeriod();
+
     return Scaffold(
         backgroundColor: Color(0xff212121),
         body: SafeArea(
@@ -171,7 +173,7 @@ class CurrentPeriod extends StatefulWidget {
   _CurrentState createState() => currentPeriodState;
 }
 
-class _CurrentState extends State<CurrentPeriod> {
+class _CurrentState extends State<CurrentPeriod>{
   void refresh() {
     setState(() {});
   }
@@ -181,6 +183,7 @@ class _CurrentState extends State<CurrentPeriod> {
     return Text(determinePeriod(),
         style: TextStyle(
             color: Color(0xffDCEDC8),
+            fontFamily: 'ProductSans',
             fontSize: SizeConfig.safeBlockHorizontal * 15));
   }
 }
@@ -255,7 +258,7 @@ class _ActiveTimeState extends State<ActiveTime> {
   Widget build(BuildContext context) {
     return Text(
       _timeString,
-      style: TextStyle(color: Color(0xffFFCDD2), fontSize: SizeConfig.safeBlockHorizontal * 13),
+      style: TextStyle(color: Color(0xffFFCDD2), fontSize: SizeConfig.safeBlockHorizontal * 13, fontFamily: 'ProductSans'),
     );
   }
 
