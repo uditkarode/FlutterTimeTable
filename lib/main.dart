@@ -82,6 +82,10 @@ void main() {
       break;
   }
 
+  if (DateTime.now().compareTo(collegeStart) >= 0 && DateTime.now().compareTo(collegeEnd) <= 0){
+
+  }
+
   setupExactTimes();
   runApp(MaterialApp(home: Home(), theme: ThemeData(fontFamily: 'ProductSans')));
 }
@@ -104,6 +108,7 @@ class Home extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         DateFormat('EEEE').format(DateTime.now()),
+                        textAlign: TextAlign.center,
                         style:
                             TextStyle(color: Color(0xffB3E5FC), fontSize: SizeConfig.safeBlockHorizontal * 10),
                       )
