@@ -7,3 +7,5 @@ jobs:
       - checkout
       - run: flutter doctor
       - run: flutter -v build apk --target-platform android-arm,android-arm64 --release --split-per-abi
+      - store_artifacts:
+                path: /build/app/outputs/apk/release
