@@ -6,24 +6,23 @@ import 'models.dart';
 
 List<Period> timeTable = List();
 
-DateTime collegeStart = DateTime.now();
-DateTime collegeEnd = DateTime.now();
+DateTime now = DateTime.now();
+String today;
+final collegeStart = DateTime(now.year, now.month, now.day, 10, 0, 0, 0, 0);
+final collegeEnd = DateTime(now.year, now.month, now.day, 16, 40, 0, 0, 0);
+
 DateTime relativeEnding;
 
 bool displayTimer = false;
 
+_RemainingPeriodsState remainingState = _RemainingPeriodsState();
 _CurrentState currentPeriodState = _CurrentState();
-CurrentPeriod indicator;
+_TodayState todayState = _TodayState();
 
 void main() {
-  collegeStart = DateTime(
-      collegeStart.year, collegeStart.month, collegeStart.day, 10, 0, 0, 0, 0);
-  collegeEnd = DateTime(
-      collegeStart.year, collegeStart.month, collegeStart.day, 16, 40, 0, 0, 0);
-
   var currentDay = DateFormat('EEEE').format(DateTime.now());
 
-  if (DateTime.now().compareTo(collegeEnd) >= 0){
+  if (DateTime.now().hour > 17){
     switch(currentDay){
       case "Monday":
         currentDay = "Tuesday";
@@ -55,6 +54,13 @@ void main() {
     }
   }
 
+  assignTimeTable(currentDay);
+  today = currentDay;
+  runApp(MaterialApp(home: Home(), theme: ThemeData(fontFamily: 'ProductSans')));
+}
+
+void assignTimeTable(String currentDay){
+  timeTable.clear();
   switch (currentDay){
     case "Monday":
       timeTable.add(Period("Chemistry", 50));
@@ -101,7 +107,7 @@ void main() {
       timeTable.add(Period("RECESS", 50));
       timeTable.add(Period("Chemistry", 50));
       timeTable.add(Period("English", 50));
-      timeTable.add(Period("Language Lab", 100));
+      timeTable.add(Period("Lang Lab", 100));
       break;
 
     case "Saturday":
@@ -114,16 +120,13 @@ void main() {
       timeTable.add(Period("Self Study", 14 * 60));
       break;
   }
-
   setupExactTimes();
-  runApp(MaterialApp(home: Home(), theme: ThemeData(fontFamily: 'ProductSans')));
 }
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    indicator = CurrentPeriod();
 
     return Scaffold(
         backgroundColor: Color(0xff212121),
@@ -135,12 +138,12 @@ class Home extends StatelessWidget {
                 Center(
                   child: Column(
                     children: <Widget>[
-                      Text(
-                        DateFormat('EEEE').format(DateTime.now()),
-                        textAlign: TextAlign.center,
-                        style:
-                            TextStyle(color: Color(0xffB3E5FC), fontSize: SizeConfig.safeBlockHorizontal * 10),
-                      )
+                    GestureDetector(
+                      onTap: (){
+                        _asyncDayChooser(context);
+                      },
+                      child: TodayText()
+                    )
                     ],
                   ),
                 ),
@@ -153,7 +156,7 @@ class Home extends StatelessWidget {
                   padding: EdgeInsets.only(top: 13.5),
                   child: Center(
                     child: Column(
-                      children: <Widget>[indicator],
+                      children: <Widget>[CurrentPeriod()],
                     ),
                   ),
                 ),
@@ -203,6 +206,29 @@ void setupExactTimes() {
   }
 }
 
+class TodayText extends StatefulWidget {
+  _TodayState createState() => todayState;
+}
+
+class _TodayState extends State<TodayText> {
+  void refresh(String day){
+    setState(() {
+      today = day;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      today,
+      textAlign: TextAlign.center,
+      style:
+      TextStyle(color: Color(0xffB3E5FC), fontSize: SizeConfig.safeBlockHorizontal * 10),
+    );
+  }
+
+}
+
 class CurrentPeriod extends StatefulWidget {
   _CurrentState createState() => currentPeriodState;
 }
@@ -222,7 +248,15 @@ class _CurrentState extends State<CurrentPeriod>{
   }
 }
 
-class RemainingPeriods extends StatelessWidget {
+class RemainingPeriods extends StatefulWidget {
+  _RemainingPeriodsState createState() => remainingState;
+}
+
+class _RemainingPeriodsState extends State<RemainingPeriods> {
+  void refresh(){
+    setState((){});
+  }
+
   @override
   Widget build(BuildContext context) {
     int actualCount = -1;
@@ -332,4 +366,71 @@ class _ActiveTimeState extends State<ActiveTime> {
       currentPeriodState.refresh();
     return hoursStr + ':' + minutesStr + ':' + secondsStr;
   }
+}
+
+Future _asyncDayChooser(BuildContext context) async {
+  return await showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (BuildContext context) {
+        return SimpleDialog(
+          title: Text('Choose day', style: TextStyle(fontSize: SizeConfig.safeBlockHorizontal * 7, fontWeight: FontWeight.bold)),
+          children: <Widget>[
+            SimpleDialogOption(
+              onPressed: () {
+                assignTimeTable('Monday');
+                todayState.refresh('Monday');
+                Navigator.pop(context);
+                remainingState.refresh();
+              },
+              child: Text('Monday', style: TextStyle(fontSize: SizeConfig.safeBlockHorizontal * 5.5)),
+            ),
+            SimpleDialogOption(
+              onPressed: () {
+                assignTimeTable('Tuesday');
+                todayState.refresh('Tuesday');
+                Navigator.pop(context);
+                remainingState.refresh();
+              },
+              child: Text('Tuesday', style: TextStyle(fontSize: SizeConfig.safeBlockHorizontal * 5.5)),
+            ),
+            SimpleDialogOption(
+              onPressed: () {
+                assignTimeTable('Wednesday');
+                todayState.refresh('Wednesday');
+                Navigator.pop(context);
+                remainingState.refresh();
+              },
+              child: Text('Wednesday', style: TextStyle(fontSize: SizeConfig.safeBlockHorizontal * 5.5)),
+            ),
+            SimpleDialogOption(
+              onPressed: () {
+                assignTimeTable('Thursday');
+                todayState.refresh('Thursday');
+                Navigator.pop(context);
+                remainingState.refresh();
+              },
+              child: Text('Thursday', style: TextStyle(fontSize: SizeConfig.safeBlockHorizontal * 5.5)),
+            ),
+            SimpleDialogOption(
+              onPressed: () {
+                assignTimeTable('Friday');
+                todayState.refresh('Friday');
+                Navigator.pop(context);
+                remainingState.refresh();
+              },
+              child: Text('Friday', style: TextStyle(fontSize: SizeConfig.safeBlockHorizontal * 5.5)),
+            ),
+            SimpleDialogOption(
+              onPressed: () {
+                assignTimeTable('Saturday');
+                todayState.refresh('Saturday');
+                Navigator.pop(context);
+                remainingState.refresh();
+              },
+              child: Text('Saturday', style: TextStyle(fontSize: SizeConfig.safeBlockHorizontal * 5.5))
+            ),
+          ],
+        );
+      });
 }
