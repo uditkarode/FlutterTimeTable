@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:time_table/SizeConfig.dart';
@@ -22,14 +21,48 @@ void main() {
   collegeEnd = DateTime(
       collegeStart.year, collegeStart.month, collegeStart.day, 16, 40, 0, 0, 0);
 
-  switch (DateFormat('EEEE').format(DateTime.now())){
+  var currentDay = DateFormat('EEEE').format(DateTime.now());
+
+  if (DateTime.now().compareTo(collegeEnd) >= 0){
+    switch(currentDay){
+      case "Monday":
+        currentDay = "Tuesday";
+        break;
+
+      case "Tuesday":
+        currentDay = "Wednesday";
+        break;
+
+      case "Wednesday":
+        currentDay = "Thursday";
+        break;
+
+      case "Thursday":
+        currentDay = "Friday";
+        break;
+
+      case "Friday":
+        currentDay = "Saturday";
+        break;
+
+      case "Saturday":
+        currentDay = "Monday";
+        break;
+
+      case "Sunday":
+        currentDay = "Monday";
+        break;
+    }
+  }
+
+  switch (currentDay){
     case "Monday":
       timeTable.add(Period("Chemistry", 50));
       timeTable.add(Period("BCEM", 50));
       timeTable.add(Period("English", 50));
       timeTable.add(Period("RECESS", 50));
-      timeTable.add(Period("Chem/BCEM Lab", 100));
-      timeTable.add(Period("Chem/BCEM Lab", 100));
+      timeTable.add(Period("Ch/BCEM Lab", 100));
+      timeTable.add(Period("Ch/BCEM Lab", 100));
       break;
 
     case "Tuesday":
@@ -80,10 +113,6 @@ void main() {
     case "Sunday":
       timeTable.add(Period("Self Study", 14 * 60));
       break;
-  }
-
-  if (DateTime.now().compareTo(collegeStart) >= 0 && DateTime.now().compareTo(collegeEnd) <= 0){
-
   }
 
   setupExactTimes();
