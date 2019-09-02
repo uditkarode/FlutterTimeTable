@@ -61,8 +61,8 @@ void main() {
       timeTable.add(Period("BCEM", 50));
       timeTable.add(Period("English", 50));
       timeTable.add(Period("RECESS", 50));
-      timeTable.add(Period("Ch/BCEM Lab", 100));
-      timeTable.add(Period("Ch/BCEM Lab", 100));
+      timeTable.add(Period("C/CM Lab", 100));
+      timeTable.add(Period("C/CM Lab", 100));
       break;
 
     case "Tuesday":
@@ -312,7 +312,7 @@ class _ActiveTimeState extends State<ActiveTime> {
     if (seconds > 60) minutes = seconds ~/ 60;
     if (minutes > 60) hours = minutes ~/ 60;
 
-    seconds = seconds - 60 * minutes - 60 * 60 * hours;
+    seconds = seconds - 60 * minutes;
     minutes = minutes - 60 * hours;
 
     if (seconds < 10)
