@@ -10,7 +10,7 @@ String today;
 
 final DateTime collegeStart =
 DateTime(now.year, now.month, now.day, 10, 0, 0, 0, 0);
-final DateTime collegeEnd =
+DateTime collegeEnd =
 DateTime(now.year, now.month, now.day, 16, 40, 0, 0, 0);
 DateTime relativeEnding;
 
