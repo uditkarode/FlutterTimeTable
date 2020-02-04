@@ -8,61 +8,62 @@ void assignTimeTable(String currentDay) {
   timeTable.clear();
   switch (currentDay) {
     case "Monday":
-      timeTable.add(Period("Chemistry", 50));
-      timeTable.add(Period("BCEM", 50));
-      timeTable.add(Period("English", 50));
+      timeTable.add(Period("BEEE", 50));
+      timeTable.add(Period("Physics", 50));
+      timeTable.add(Period("Math", 50));
       timeTable.add(Period("RECESS", 50));
-      timeTable.add(Period("C/CM Lab", 100));
-      timeTable.add(Period("C/CM Lab", 100));
+      timeTable.add(Period("PH/B Lab", 100));
+      timeTable.add(Period("PH/B Lab", 100));
       break;
 
     case "Tuesday":
-      timeTable.add(Period("English", 50));
-      timeTable.add(Period("Math", 50));
-      timeTable.add(Period("BCEM", 50));
+      timeTable.add(Period("EG Lab", 150));
       timeTable.add(Period("RECESS", 50));
-      timeTable.add(Period("PPS", 50));
-      timeTable.add(Period("Chemistry", 50));
-      timeTable.add(Period("Self Study", 100));
+      timeTable.add(Period("Math", 50));
+      timeTable.add(Period("FOC", 50));
+      timeTable.add(Period("Physics", 50));
+      timeTable.add(Period("Self Study", 50));
       break;
 
     case "Wednesday":
-      timeTable.add(Period("Math", 50));
-      timeTable.add(Period("Chemistry", 50));
-      timeTable.add(Period("PPS", 50));
+      timeTable.add(Period("FOC Lab", 100));
+      timeTable.add(Period("BEEE", 50));
       timeTable.add(Period("RECESS", 50));
-      timeTable.add(Period("English", 50));
-      timeTable.add(Period("BCEM", 50));
-      timeTable.add(Period("Self Study", 100));
+      timeTable.add(Period("FOC", 50));
+      timeTable.add(Period("Physics", 50));
+      timeTable.add(Period("Math", 50));
+      timeTable.add(Period("Self Study", 50));
       break;
 
     case "Thursday":
-      timeTable.add(Period("PPS Lab", 100));
-      timeTable.add(Period("Chemistry", 50));
-      timeTable.add(Period("RECESS", 50));
-      timeTable.add(Period("PPS", 50));
+      timeTable.add(Period("FOC", 50));
+      timeTable.add(Period("Physics", 50));
       timeTable.add(Period("Math", 50));
-      timeTable.add(Period("Self Study", 100));
+      timeTable.add(Period("RECESS", 50));
+      timeTable.add(Period("BEEE", 50));
+      timeTable.add(Period("Val. Ed", 100));
+      timeTable.add(Period("Self Study", 50));
       break;
 
     case "Friday":
-      timeTable.add(Period("BCEM", 50));
-      timeTable.add(Period("PPS", 50));
-      timeTable.add(Period("Math", 50));
+      timeTable.add(Period("EG Lab", 150));
       timeTable.add(Period("RECESS", 50));
-      timeTable.add(Period("Chemistry", 50));
-      timeTable.add(Period("English", 50));
-      timeTable.add(Period("Lang Lab", 100));
+      timeTable.add(Period("Physics", 50));
+      timeTable.add(Period("Math", 50));
+      timeTable.add(Period("BEEE", 50));
+      timeTable.add(Period("Self Study", 50));
       break;
 
     case "Saturday":
       timeTable.add(Period("Math", 50));
-      timeTable.add(Period("Workshop", 150));
+      timeTable.add(Period("BEEE", 50));
+      timeTable.add(Period("Physics", 50));
+      timeTable.add(Period("FOC", 50));
       timeTable.add(Period("Self Study", 50));
       break;
 
     case "Sunday":
-      timeTable.add(Period("Self Study", 14 * 60));
+      timeTable.add(Period("Fun-day", 14 * 60));
       break;
   }
   setupExactTimes();
