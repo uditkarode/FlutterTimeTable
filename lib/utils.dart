@@ -26,10 +26,9 @@ void assignTimeTable(String currentDay) {
       break;
 
     case "Wednesday":
-      timeTable.add(Period("FOC Lab", 100));
-      timeTable.add(Period("BEEE", 50));
+      timeTable.add(Period("FOC Lab", 150));
       timeTable.add(Period("RECESS", 50));
-      timeTable.add(Period("FOC", 50));
+      timeTable.add(Period("BEEE", 50));
       timeTable.add(Period("Physics", 50));
       timeTable.add(Period("Math", 50));
       timeTable.add(Period("Self Study", 50));
