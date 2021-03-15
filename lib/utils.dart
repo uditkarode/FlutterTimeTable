@@ -8,77 +8,55 @@ void assignTimeTable(String currentDay) {
   timeTable.clear();
   switch (currentDay) {
     case "Monday":
-      timeTable.add(Period("Math III", 60));
-      timeTable.add(Period("Test", 15));
-      timeTable.add(Period("Shifting Time", 10));
-      timeTable.add(Period("PPL", 50));
-      timeTable.add(Period("Test", 15));
-      timeTable.add(Period("Shifting Time", 10));
-      timeTable.add(Period("DS", 50));
-      timeTable.add(Period("Test", 15));
+      timeTable.add(Period("OOPS", 60));
+      timeTable.add(Period("DBMS", 60));
+      timeTable.add(Period("DM", 60));
+      timeTable.add(Period("Recess", 60));
+      timeTable.add(Period("ADA", 60));
+      timeTable.add(Period("OOPS Lab", 120));
       break;
 
     case "Tuesday":
-      timeTable.add(Period("DET", 60));
-      timeTable.add(Period("Test", 15));
-      timeTable.add(Period("Shifting Time", 10));
-      timeTable.add(Period("OS", 50));
-      timeTable.add(Period("Test", 15));
-      timeTable.add(Period("Shifting Time", 10));
-      timeTable.add(Period("Math III", 50));
-      timeTable.add(Period("Test", 15));
-      timeTable.add(Period("Free", 75));
-      timeTable.add(Period("DS Lab", 120));
+      timeTable.add(Period("DM", 60));
+      timeTable.add(Period("CSA", 60));
+      timeTable.add(Period("ADA", 60));
+      timeTable.add(Period("Recess", 60));
+      timeTable.add(Period("OOPS", 60));
+      timeTable.add(Period("CSI", 120));
       break;
 
     case "Wednesday":
-      timeTable.add(Period("PPL", 60));
-      timeTable.add(Period("Test", 15));
-      timeTable.add(Period("Shifting Time", 10));
-      timeTable.add(Period("Math III", 50));
-      timeTable.add(Period("Test", 15));
-      timeTable.add(Period("Shifting Time", 10));
-      timeTable.add(Period("DS", 50));
-      timeTable.add(Period("Test", 15));
-      timeTable.add(Period("Free", 75));
-      timeTable.add(Period("OS (UNIX) Lab", 120));
+      timeTable.add(Period("OOPS", 60));
+      timeTable.add(Period("DM", 60));
+      timeTable.add(Period("DBMS", 60));
+      timeTable.add(Period("Rececss", 60));
+      timeTable.add(Period("CSA", 60));
+      timeTable.add(Period("Virtual Lab", 120));
       break;
 
     case "Thursday":
-      timeTable.add(Period("DET", 60));
-      timeTable.add(Period("Test", 15));
-      timeTable.add(Period("Shifting Time", 10));
-      timeTable.add(Period("OS", 50));
-      timeTable.add(Period("Test", 15));
-      timeTable.add(Period("Shifting Time", 10));
-      timeTable.add(Period("DS", 50));
-      timeTable.add(Period("Test", 15));
-      timeTable.add(Period("Free", 75));
-      timeTable.add(Period("S/W Lab", 120));
+      timeTable.add(Period("CSA", 60));
+      timeTable.add(Period("ADA", 60));
+      timeTable.add(Period("OOPS", 60));
+      timeTable.add(Period("Recess", 60));
+      timeTable.add(Period("DM", 60));
+      timeTable.add(Period("CSA/HW Lab", 120));
       break;
 
     case "Friday":
-      timeTable.add(Period("DS", 60));
-      timeTable.add(Period("Test", 15));
-      timeTable.add(Period("Shifting Time", 10));
-      timeTable.add(Period("PPL", 50));
-      timeTable.add(Period("Test", 15));
-      timeTable.add(Period("Shifting Time", 10));
-      timeTable.add(Period("Math III", 50));
-      timeTable.add(Period("Test", 15));
-      timeTable.add(Period("Free", 75));
-      timeTable.add(Period("DET Lab", 120));
+      timeTable.add(Period("DBMS", 60));
+      timeTable.add(Period("ADA", 60));
+      timeTable.add(Period("CSA", 60));
+      timeTable.add(Period("Recess", 60));
+      timeTable.add(Period("DM", 60));
+      timeTable.add(Period("DBMS Lab", 120));
       break;
 
     case "Saturday":
-      timeTable.add(Period("DET", 60));
-      timeTable.add(Period("Test", 15));
-      timeTable.add(Period("Shifting Time", 10));
-      timeTable.add(Period("OS", 50));
-      timeTable.add(Period("Test", 15));
-      timeTable.add(Period("Shifting Time", 10));
-      timeTable.add(Period("PPL", 50));
-      timeTable.add(Period("Test", 15));
+      timeTable.add(Period("ADA", 60));
+      timeTable.add(Period("DBMS", 60));
+      timeTable.add(Period("CSA", 60));
+      timeTable.add(Period("OOPS", 60));
       break;
 
     case "Sunday":
