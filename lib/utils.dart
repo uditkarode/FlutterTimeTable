@@ -7,61 +7,60 @@ import 'models.dart';
 void assignTimeTable(String currentDay) {
   timeTable.clear();
   switch (currentDay) {
+
     case "Monday":
-      timeTable.add(Period("OOPS", 60));
-      timeTable.add(Period("DBMS", 60));
-      timeTable.add(Period("DM", 60));
+      timeTable.add(Period("MP", 60));
+      timeTable.add(Period("CN", 60));
+      timeTable.add(Period("FLAT", 60));
       timeTable.add(Period("Recess", 60));
-      timeTable.add(Period("ADA", 60));
-      timeTable.add(Period("OOPS Lab", 120));
+      timeTable.add(Period("DAP", 60));
+      timeTable.add(Period("DAP/MP LAB", 120));
       break;
 
     case "Tuesday":
-      timeTable.add(Period("DM", 60));
-      timeTable.add(Period("CSA", 60));
-      timeTable.add(Period("ADA", 60));
+      timeTable.add(Period("E1", 60));
+      timeTable.add(Period("MP", 60));
+      timeTable.add(Period("CN", 60));
       timeTable.add(Period("Recess", 60));
-      timeTable.add(Period("OOPS", 60));
-      timeTable.add(Period("CSI", 120));
+      timeTable.add(Period("FLAT", 60));
+      timeTable.add(Period("CN/PROJECT LAB", 120));
       break;
 
     case "Wednesday":
-      timeTable.add(Period("OOPS", 60));
-      timeTable.add(Period("DM", 60));
-      timeTable.add(Period("DBMS", 60));
+      timeTable.add(Period("DAP", 60));
+      timeTable.add(Period("E1", 60));
+      timeTable.add(Period("MP", 60));
       timeTable.add(Period("Rececss", 60));
-      timeTable.add(Period("CSA", 60));
-      timeTable.add(Period("Virtual Lab", 120));
+      timeTable.add(Period("CN", 60));
+      timeTable.add(Period("EVS", 120));
       break;
 
     case "Thursday":
-      timeTable.add(Period("CSA", 60));
-      timeTable.add(Period("ADA", 60));
-      timeTable.add(Period("OOPS", 60));
+      timeTable.add(Period("FLAT", 60));
+      timeTable.add(Period("DAP", 60));
+      timeTable.add(Period("E1", 60));
       timeTable.add(Period("Recess", 60));
-      timeTable.add(Period("DM", 60));
-      timeTable.add(Period("CSA/HW Lab", 120));
+      timeTable.add(Period("MP", 60));
+      timeTable.add(Period("PROJECT/CN LAB", 120));
       break;
 
     case "Friday":
-      timeTable.add(Period("DBMS", 60));
-      timeTable.add(Period("ADA", 60));
-      timeTable.add(Period("CSA", 60));
+      timeTable.add(Period("CN", 60));
+      timeTable.add(Period("FLAT", 60));
+      timeTable.add(Period("DAP", 60));
       timeTable.add(Period("Recess", 60));
-      timeTable.add(Period("DM", 60));
-      timeTable.add(Period("DBMS Lab", 120));
+      timeTable.add(Period("E1", 60));
+      timeTable.add(Period("MP/DAP LAB", 120));
       break;
 
     case "Saturday":
-      timeTable.add(Period("ADA", 60));
-      timeTable.add(Period("DBMS", 60));
-      timeTable.add(Period("CSA", 60));
-      timeTable.add(Period("OOPS", 60));
+      timeTable.add(Period("Fun-day", 14 * 60));
       break;
 
     case "Sunday":
       timeTable.add(Period("Fun-day", 14 * 60));
       break;
+
   }
   setupExactTimes();
 }
