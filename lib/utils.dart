@@ -6,55 +6,59 @@ import 'models.dart';
 
 void assignTimeTable(String currentDay) {
   timeTable.clear();
+  
   switch (currentDay) {
-
     case "Monday":
-      timeTable.add(Period("MP", 60));
-      timeTable.add(Period("CN", 60));
-      timeTable.add(Period("FLAT", 60));
-      timeTable.add(Period("Recess", 60));
-      timeTable.add(Period("DAP", 60));
-      timeTable.add(Period("DAP/MP LAB", 120));
+      timeTable.add(Period("FLAT", 50));
+      timeTable.add(Period("DAP", 50));
+      timeTable.add(Period("MPI", 50));
+      timeTable.add(Period("CN", 50));
+      timeTable.add(Period("Recess", 50));
+      timeTable.add(Period("MPI Lab", 150));
       break;
 
     case "Tuesday":
-      timeTable.add(Period("E1", 60));
-      timeTable.add(Period("MP", 60));
-      timeTable.add(Period("CN", 60));
-      timeTable.add(Period("Recess", 60));
-      timeTable.add(Period("FLAT", 60));
-      timeTable.add(Period("CN/PROJECT LAB", 120));
+      timeTable.add(Period("CN", 50));
+      timeTable.add(Period("FLAT", 50));
+      timeTable.add(Period("MVR/OOAD", 50));
+      timeTable.add(Period("MPI", 50));
+      timeTable.add(Period("Recess", 50));
+      timeTable.add(Period("Project Lab", 150));
       break;
 
     case "Wednesday":
-      timeTable.add(Period("DAP", 60));
-      timeTable.add(Period("E1", 60));
-      timeTable.add(Period("MP", 60));
-      timeTable.add(Period("Rececss", 60));
-      timeTable.add(Period("CN", 60));
-      timeTable.add(Period("EVS", 120));
+      timeTable.add(Period("MP", 50));
+      timeTable.add(Period("CN", 50));
+      timeTable.add(Period("DAP", 50));
+      timeTable.add(Period("MVR/OOAD", 50));
+      timeTable.add(Period("Recess", 50));
+      timeTable.add(Period("CN Lab", 150));
       break;
 
     case "Thursday":
-      timeTable.add(Period("FLAT", 60));
-      timeTable.add(Period("DAP", 60));
-      timeTable.add(Period("E1", 60));
-      timeTable.add(Period("Recess", 60));
-      timeTable.add(Period("MP", 60));
-      timeTable.add(Period("PROJECT/CN LAB", 120));
+      timeTable.add(Period("MVR/OOAD", 50));
+      timeTable.add(Period("MPI", 50));
+      timeTable.add(Period("FLAT", 50));
+      timeTable.add(Period("DAP", 50));
+      timeTable.add(Period("Recess", 50));
+      timeTable.add(Period("EVS", 100));
+      timeTable.add(Period("Library", 50));
       break;
 
     case "Friday":
-      timeTable.add(Period("CN", 60));
-      timeTable.add(Period("FLAT", 60));
-      timeTable.add(Period("DAP", 60));
-      timeTable.add(Period("Recess", 60));
-      timeTable.add(Period("E1", 60));
-      timeTable.add(Period("MP/DAP LAB", 120));
+      timeTable.add(Period("DAP", 50));
+      timeTable.add(Period("MVR/OOAD", 50));
+      timeTable.add(Period("CN", 50));
+      timeTable.add(Period("FLAT", 50));
+      timeTable.add(Period("Recess", 50));
+      timeTable.add(Period("DAP Lab", 150));
       break;
 
     case "Saturday":
-      timeTable.add(Period("Fun-day", 14 * 60));
+      timeTable.add(Period("FLAT", 50));
+      timeTable.add(Period("DAP", 50));
+      timeTable.add(Period("MPI", 50));
+      timeTable.add(Period("CN", 50));
       break;
 
     case "Sunday":
