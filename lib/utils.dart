@@ -67,7 +67,6 @@ case "Monday":
       timeTable.add(Period("Fun-day", 14 * 50));
       break;
 
-
   }
   setupExactTimes();
 }
