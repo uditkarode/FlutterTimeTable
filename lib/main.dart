@@ -6,7 +6,7 @@ import 'widgets/Home.dart';
 
 void main() {
   var currentDay = DateFormat('EEEE').format(DateTime.now());
-  if(currentDay == "Saturday") collegeEnd = DateTime(now.year, now.month, now.day, 14, 10, 0, 0, 0);
+  if(currentDay == "Saturday") collegeEnd = DateTime(now.year, now.month, now.day, 13, 20, 0, 0, 0);
 
 
   if (DateTime.now().hour > 16) {
