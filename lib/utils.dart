@@ -8,58 +8,65 @@ void assignTimeTable(String currentDay) {
   timeTable.clear();
   switch (currentDay) {
 
-    case "Monday":
-      timeTable.add(Period("MP", 60));
-      timeTable.add(Period("CN", 60));
-      timeTable.add(Period("FLAT", 60));
-      timeTable.add(Period("Recess", 60));
-      timeTable.add(Period("DAP", 60));
-      timeTable.add(Period("DAP/MP LAB", 120));
+case "Monday":
+      timeTable.add(Period("SEPM", 50));
+      timeTable.add(Period("AIES", 50));
+      timeTable.add(Period("CNS", 50));
+      timeTable.add(Period("IOT", 50));
+      timeTable.add(Period("Recess", 50));
+      timeTable.add(Period("CD", 50));
+      timeTable.add(Period("TCSS", 100));
       break;
 
     case "Tuesday":
-      timeTable.add(Period("E1", 60));
-      timeTable.add(Period("MP", 60));
-      timeTable.add(Period("CN", 60));
-      timeTable.add(Period("Recess", 60));
-      timeTable.add(Period("FLAT", 60));
-      timeTable.add(Period("CN/PROJECT LAB", 120));
+      timeTable.add(Period("CNS", 50));
+      timeTable.add(Period("IOT", 50));
+      timeTable.add(Period("AIES", 50));
+      timeTable.add(Period("SEPM", 50));
+      timeTable.add(Period("Recess", 50));
+      timeTable.add(Period("Android LAB", 150));
       break;
 
     case "Wednesday":
-      timeTable.add(Period("DAP", 60));
-      timeTable.add(Period("E1", 60));
-      timeTable.add(Period("MP", 60));
-      timeTable.add(Period("Rececss", 60));
-      timeTable.add(Period("CN", 60));
-      timeTable.add(Period("EVS", 120));
+      timeTable.add(Period("AIES", 50));
+      timeTable.add(Period("SEPM LAB", 150));
+      timeTable.add(Period("Recess", 50));
+      timeTable.add(Period("CNS", 50));
+      timeTable.add(Period("SEPM", 50));
+      timeTable.add(Period("CD", 50));
       break;
 
     case "Thursday":
-      timeTable.add(Period("FLAT", 60));
-      timeTable.add(Period("DAP", 60));
-      timeTable.add(Period("E1", 60));
-      timeTable.add(Period("Recess", 60));
-      timeTable.add(Period("MP", 60));
-      timeTable.add(Period("PROJECT/CN LAB", 120));
+      timeTable.add(Period("CD", 50));
+      timeTable.add(Period("IOT", 50));
+      timeTable.add(Period("AIES", 50));
+      timeTable.add(Period("CNS", 50));
+      timeTable.add(Period("Recess", 50));
+      timeTable.add(Period("AIES LAB", 150));
       break;
 
     case "Friday":
-      timeTable.add(Period("CN", 60));
-      timeTable.add(Period("FLAT", 60));
-      timeTable.add(Period("DAP", 60));
-      timeTable.add(Period("Recess", 60));
-      timeTable.add(Period("E1", 60));
-      timeTable.add(Period("MP/DAP LAB", 120));
+      timeTable.add(Period("CD", 50));
+      timeTable.add(Period("SEPM", 50));
+      timeTable.add(Period("IOT", 50));
+      timeTable.add(Period("CNS", 50));
+      timeTable.add(Period("Recess", 50));
+      timeTable.add(Period("IOT LAB", 150));
       break;
 
     case "Saturday":
-      timeTable.add(Period("Fun-day", 14 * 60));
+      timeTable.add(Period("IOT", 50));
+      timeTable.add(Period("CD", 50));
+      timeTable.add(Period("SEPM", 50));
+      timeTable.add(Period("AIES", 50));
+      timeTable.add(Period("LIBRARY", 50));
+
       break;
 
     case "Sunday":
-      timeTable.add(Period("Fun-day", 14 * 60));
+      timeTable.add(Period("Fun-day", 14 * 50));
       break;
+
 
   }
   setupExactTimes();
